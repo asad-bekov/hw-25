@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  centos:
+    image: pycontribs/centos:7
+    container_name: centos
+    stdin_open: true    # Аналог docker run -i
+    tty: true          # Аналог docker run -t
+    command: sleep infinity  # Держим контейнер активным
+
+  debian:
+    image: pycontribs/debian:latest
+    container_name: debian
+    stdin_open: true
+    tty: true
+    command: sleep infinity

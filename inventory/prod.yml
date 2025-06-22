@@ -1,9 +1,18 @@
----
-  el:
-    hosts:
-      centos7:
-        ansible_connection: docker
-  deb:
-    hosts:
-      ubuntu:
-        ansible_connection: docker
+all:
+  children:
+    debian:
+      hosts:
+        debian_host:
+          ansible_connection: docker
+    centos:
+      hosts:
+        centos_host:
+          ansible_connection: docker
+    local:
+      hosts:
+        localhost:
+          ansible_connection: local
+    fedora:
+      hosts:
+        fedora_host:
+          ansible_connection: docker
